@@ -1,6 +1,7 @@
 
 // Add ace actions get down and go away to self-interaction window
 // You need to put this in initPlayerLocal.sqf
+// Make sure to put iconOrder.paa in root of mission folder
 orderAction = ['TA_OrderAction','Order','iconOrder.paa',{},{true}] call ace_interact_menu_fnc_createAction;
 [player, 1, ["ACE_SelfActions"], orderAction] call ace_interact_menu_fnc_addActionToObject;
 
