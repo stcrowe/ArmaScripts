@@ -47,8 +47,30 @@ switch (_headgear) do
 		_unit addHeadgear "H_HelmetB_light_black";
 	};
 
+
+	case "H_HelmetLeaderO_ghex_F":
+	{
+		removeHeadgear _unit;
+		_unit addHeadgear "H_HelmetIA";
+	};
+
+	case "H_HelmetO_ghex_F":
+	{
+		removeHeadgear _unit;
+		_unit addHeadgear "H_HelmetIA";
+	};
+
+	case "H_HelmetSpecO_ghex_F":
+	{
+		removeHeadgear _unit;
+		_unit addHeadgear "H_HelmetIA";
+	};
+
+
 	default
 	{
 
 	};
 };
+
+_unit call (compile preprocessFileLineNumbers 'CSATAKs.sqf');
