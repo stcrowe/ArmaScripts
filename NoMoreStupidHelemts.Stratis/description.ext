@@ -1,0 +1,6 @@
+class Extended_Init_EventHandlers {
+ 	class SoldierEB {
+  		init = "_this call (compile preprocessFileLineNumbers 'removeStupidHelmet.sqf')";
+ 	};
+};
+
