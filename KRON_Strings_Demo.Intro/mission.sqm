@@ -1,0 +1,110 @@
+version=11;
+class Mission
+{
+	addOns[]=
+	{
+		"cacharacters",
+		"desert"
+	};
+	addOnsAuto[]=
+	{
+		"cacharacters",
+		"desert"
+	};
+	randomSeed=6035459;
+	class Intel
+	{
+		startWeather=0.100000;
+		forecastWeather=0.300000;
+		year=2007;
+		month=6;
+		day=7;
+		hour=8;
+	};
+	class Groups
+	{
+		items=1;
+		class Item0
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={2545.278809,13.860000,2496.962158};
+					id=0;
+					side="WEST";
+					vehicle="SoldierWB";
+					player="PLAYER COMMANDER";
+					leader=1;
+					skill=0.600000;
+					init="hint ""Use action menu to start script""";
+				};
+			};
+		};
+	};
+};
+class Intro
+{
+	addOns[]=
+	{
+		"desert"
+	};
+	addOnsAuto[]=
+	{
+		"desert"
+	};
+	randomSeed=9328131;
+	class Intel
+	{
+		startWeather=0.100000;
+		forecastWeather=0.300000;
+		year=2007;
+		month=6;
+		day=7;
+		hour=8;
+	};
+};
+class OutroWin
+{
+	addOns[]=
+	{
+		"desert"
+	};
+	addOnsAuto[]=
+	{
+		"desert"
+	};
+	randomSeed=7706627;
+	class Intel
+	{
+		startWeather=0.100000;
+		forecastWeather=0.300000;
+		year=2007;
+		month=6;
+		day=7;
+		hour=8;
+	};
+};
+class OutroLoose
+{
+	addOns[]=
+	{
+		"desert"
+	};
+	addOnsAuto[]=
+	{
+		"desert"
+	};
+	randomSeed=13801475;
+	class Intel
+	{
+		startWeather=0.100000;
+		forecastWeather=0.300000;
+		year=2007;
+		month=6;
+		day=7;
+		hour=8;
+	};
+};
