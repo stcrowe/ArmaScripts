@@ -1,0 +1,1 @@
+[] execVM "CoalaOs\initCoalaAfter.sqf";
