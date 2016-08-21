@@ -1,1 +1,2 @@
-[] execVM "CoalaOs\initCoalaAfter.sqf";
+//Init TFAOs
+[] execVM "TFAOs\initTFAAfter.sqf";

@@ -1,5 +1,5 @@
 /*
-	File: CoalaOsBlueforTracker.sqf
+	File: TFAOsBlueforTracker.sqf
 	Creator: Niky
 	Date: 11.03.2015
 */
@@ -8,18 +8,18 @@ _parameters = _this select 0;
 _processId = _this select 1;
 _fileName = _this select 2;
 
-fncoala_startbluefortracker = 
+fnTFA_startbluefortracker =
 {
 	_width = 40;
 	_height = 25;
-	_programWindow = [0,0,_width,_height, _fileName] call fnCoala_DrawWindow;
-	[_programWindow select 0, _processId, "processID"] call fnCoala_addVariableToControl;
-	
+	_programWindow = [0,0,_width,_height, _fileName] call fnTFA_DrawWindow;
+	[_programWindow select 0, _processId, "processID"] call fnTFA_addVariableToControl;
+
 	_map = ["RscMapControl", "", 0,0,0,0] call addCtrl;
-	[_programWindow select 0, _map, [0,0,_width,_height - 1.5]] call fnCoala_addControlToWindow;
-	
-	_map ctrlAddEventHandler 
-	["Draw", 
+	[_programWindow select 0, _map, [0,0,_width,_height - 1.5]] call fnTFA_addControlToWindow;
+
+	_map ctrlAddEventHandler
+	["Draw",
 	{
 		{
 			_searchFor = ["tf_rt1523g", "tf_rt1523g_big", "tf_rt1523g_sage", "tf_rt1523g_green", "tf_rt1523g_black", "tf_rt1523g_fabric",
@@ -31,19 +31,19 @@ fncoala_startbluefortracker =
 				{
 					_name = format["%1 - %2", _name, getText (configFile >> "CfgVehicles" >> typeOf (vehicle _x) >> "displayname")];
 				};
-				_this select 0 drawIcon 
-				[ 
+				_this select 0 drawIcon
+				[
 					getText (configFile >> "CfgVehicles" >> typeOf (vehicle _x) >> "icon"),//"iconman", //zu finden unter Arma 3\Addons\ui_f_data.pbo\map\... einfach _ca.paa weglassen
-					[0,0,0.7,0.7], 
-					getPos _x, 
-					40, 
-					40, 
-					getDir _x, 
-					_name, 
-					1, 
-					0.05, 
-					"TahomaB", 
-					"right" 
+					[0,0,0.7,0.7],
+					getPos _x,
+					40,
+					40,
+					getDir _x,
+					_name,
+					1,
+					0.05,
+					"TahomaB",
+					"right"
 				];
 			};
 		} foreach allUnits;
@@ -52,7 +52,7 @@ fncoala_startbluefortracker =
 	["MouseButtonDblClick",
 	{
 		//TODO: Find a way to add markers that can be deleted by user on map....... cannot find a solution right now..
-		
+
 		/*_WorldCoord = (_this select 0) posScreenToWorld [_this select 2,_this select 3];
 		hint format["%1 %2", str(_WorldCoord select 0), str(_WorldCoord select 1)];
 		_marker = createMarker [str(_WorldCoord), _WorldCoord];
@@ -60,7 +60,7 @@ fncoala_startbluefortracker =
 		_marker setMarkerBrush "Solid";
 		_marker setMarkerColor "ColorRed";
 		_marker setMarkerType "DOT";
-		
+
 		_aMarker = vehicleVarName _x;
 		_aMarker = createMarkerLocal [_aMarker,_WorldCoord];
 		_aMarker setMarkerShapeLocal "ICON";
@@ -74,9 +74,9 @@ fncoala_startbluefortracker =
 	}];
 };
 
-fncoala_stopbluefortracker = 
+fnTFA_stopbluefortracker =
 {
-	
+
 };
 
-call fncoala_startbluefortracker;
+call fnTFA_startbluefortracker;
