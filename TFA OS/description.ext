@@ -1,0 +1,3 @@
+//TFAOs Includes
+#include "TFAOs\common.hpp"
+#include "TFAOs\base.hpp"
