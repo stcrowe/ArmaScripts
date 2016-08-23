@@ -4,7 +4,8 @@
 	waitUntil{!isNil "BIS_fnc_init"};
 	waitUntil {!(isNull (findDisplay 46))};
 
-	player addaction ["Open TFA OS", "TFAOs\TFAOsMain.sqf", player, 1, true, true, "","(backpack player) in ['tf_rt1523g', 'tf_rt1523g_big', 'tf_rt1523g_sage', 'tf_rt1523g_green', 'tf_rt1523g_black', 'tf_rt1523g_fabric','tf_rt1523g_bwmod', 'tf_rt1523g_big_bwmod', 'tf_rt1523g_big_rhs', 'tf_rt1523g_rhs']"];
-	player addEventHandler ["killed",{[] spawn {waitUntil {alive player};player addaction ["Open TFA OS", "TFAOs\TFAOsMain.sqf", player, 1, true, true, "","(backpack player) in ['tf_rt1523g', 'tf_rt1523g_big', 'tf_rt1523g_sage', 'tf_rt1523g_green', 'tf_rt1523g_black', 'tf_rt1523g_fabric','tf_rt1523g_bwmod', 'tf_rt1523g_big_bwmod', 'tf_rt1523g_big_rhs', 'tf_rt1523g_rhs']"];};}];
+	 _action = ["open_tfaos", "TFA OS", "", {execVM "TFAOs\TFAOsMain.sqf";}, {(backpack player) in ["tf_rt1523g_black"]}] call ace_interact_menu_fnc_createAction;
+
+	[player, 1, ["ACE_SelfActions", "ACE_Equipment"], _action] call ace_interact_menu_fnc_addActionToObject;
 };
 
