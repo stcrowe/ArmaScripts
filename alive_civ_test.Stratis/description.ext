@@ -1,0 +1,23 @@
+//Select respawn loaction
+respawnOnStart = -1;
+//disable radio channels 0,6 = Global + System
+disableChannels[]={0,6};
+
+
+#include "LT\LTcommon.hpp"
+#include "acs\AdvancedConversationSystem.hpp"
+#include "LT\LTmenu.hpp"
+
+class CfgFunctions
+{
+
+	#include "acs\cfgFunctions.hpp"
+	#include "LT\cfgfunctions.hpp"
+};
+
+class Extended_Init_EventHandlers {
+ 	class CAManBase {
+  		init = "_this call ACS_fnc_addAceTalk;";
+ 	};
+};
+

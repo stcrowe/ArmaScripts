@@ -1,0 +1,57 @@
+
+#include "R3F_LOG\creation_factory\dlg_liste_objects.h"
+#include "functions\r3f\transport\dlg_content_vehicle.h"
+
+class cfgFunctions {
+	#include "Functions\cfgFunctions.hpp"
+};
+
+// Get rid of ACE carry and drag
+class Extended_Init_EventHandlers {
+
+
+ 	class LandVehicle
+ 	{
+ 		init = "[_this] spawn AdvLog_fnc_aceCarryOff;[_this] spawn AdvLog_fnc_objectInit;";
+ 	};
+
+ 	class Ship
+ 	{
+ 		init = "[_this] spawn AdvLog_fnc_aceCarryOff;[_this] spawn AdvLog_fnc_objectInit;";
+ 	};
+
+ 	class Air
+ 	{
+ 		init = "[_this] spawn AdvLog_fnc_aceCarryOff;[_this] spawn AdvLog_fnc_objectInit;";
+ 	};
+
+ 	class Building
+ 	{
+ 		init = "deleteVehicle (_this select 0)";
+ 	};
+
+ 	class ThingX
+ 	{
+ 		init = "[_this] spawn AdvLog_fnc_aceCarryOff;[_this] spawn AdvLog_fnc_objectInit;";
+ 	};
+
+ 	class CAManBase
+ 	{
+ 		init = "[] spawn {sleep 10; ['poop'] call AdvLog_fnc_globalMessage;};"
+ 	};
+
+ 	class SoldierEB {
+  		init = "_this call (compile preprocessFileLineNumbers 'removeStupidHelmet.sqf')";
+ 	};
+};
+
+
+/*class Extended_Init_EventHandlers {
+ 	class ReammoBox_F {
+  		init = "[_this, 0, ['ACE_MainActions', 'ACE_dragging_carry']] call ace_interact_menu_fnc_removeActionFromObject";
+ 	};
+
+ 	class Man {
+  		init = "_this call (compile preprocessFileLineNumbers 'talker.sqf')";
+ 	};
+};*/
